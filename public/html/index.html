@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <!--order of committing:
+    git add -A
+    git commit -m "algo"
+    git pull origin master
+    (git commit -m "algo")
+    git push origin master
+    -->
     <head>
         <meta charset="utf-8">
         <title>Dashboard</title>
@@ -7,53 +14,45 @@
         <link rel="stylesheet" href="/css/main.css" type="text/css">
     </head>
     <body>
-        
+
+        <!-- Bootstrap: Image and text -->
+<!--
+        <nav class="navbar navbar-light bg-faded">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Algo Here
+            </a>
+        </nav>
+-->     
         <!--nav bar with logo and logout button-->
 <!--
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Navbar</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="top-menu"><img class='my-logo' src="pictures/sick_logo.png"/>
+                <a href="html/login.html">Logout</a> &nbsp;
+        </div>
 -->
+        <!--Bootstrap Navbar-->
+        <nav class="navbar navbar-inverse bg-inverse">
+            <img class="navbar-brand" src="/pictures/sick_logo.png" width="100" height="100"/>
+            <a class="navbar-brand" id="logout" href="html/login.html">Logout</a>
+        </nav>
         
         <!--form to upload profile picture-->
-        <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-            <img src="/image/placeholder.png"/>
-            <input id="fileupload" name="myfile" type="file" />
-            <input type="submit" value="submit" id="submit" />
-        </form>
-<!--
-        <div class="profile-pic-container h1">
-        <div class="profile-pic">
-            <input id="profile-picture-data" type="hidden" name="profile-picture-data" value="">                    
-               <a href="" data-toggle="modal" data-target="#imageupload">
-                    <div id="profile-picture" class="profile-pic-text" style="background-image:url(image/placeholder.png);">
-                    S
-                    </div>
-                       </a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="the-form">
+                        <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+                        <img src="/image/placeholder.png"/>
+                        <input id="fileupload" name="myfile" type="file" />
+                        <input type="submit" value="submit" id="submit" />
+                        </form>
                     </div>
                 </div>
-                <a href="" data-toggle="modal" data-target="#imageupload" class="btn btn-md btn-default light-icon">Add or Change</a>
--->
-        
+                <div class="col-md-6">.col-md-6</div>
+            </div>
+        </div>
+    
+
         <!-- Script  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
