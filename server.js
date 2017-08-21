@@ -16,4 +16,8 @@ app.get('/', function(req, res){
     res.sendFile('/html/login.html', {root:'./public'});
 });
 
+app.get('/dashboard', function(req, res){
+    res.sendFile('/html/index.html', {root:'./public'});
+});
+
 app.listen(8080);
