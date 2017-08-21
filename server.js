@@ -18,6 +18,7 @@ app.post('/', function(req, res){
   }
 })
 
+//
 app.use(express.static('./public'));
 
 // BODY PARSER MIDDLEWARE
@@ -25,11 +26,20 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-// app.get('/', function(req, res){
-//     res.sendFile('/html/login.html', {root:'./public'});
-// });
-// app.get('/', function(req, res){
-//     res.sendFile('/html/dashboard.html', {root:'./public'});
-// });
+app.get('/login', function(req, res){
+    res.sendFile('/html/login.html', {root:'./public'});
+});
+app.get('/index', function(req, res){
+    res.sendFile('/html/index.html', {root:'./public'});
+});
+
+app.get('/dashboard', function(req, res){
+    res.sendFile('/html/index.html', {root:'./public'});
+});
+
+//css
+app.get('/main.css', function(req, res) {
+  res.sendFile('./main.css', {root: './styles'})
+})
 
 app.listen(8080);
