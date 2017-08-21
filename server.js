@@ -8,7 +8,7 @@ var upload = require('express-fileupload')
 
 app.use(upload())
 app.get('/',function(req, res){
-  res.sendFile('/html/login.html', {root:'./public'})
+  res.sendFile(__dirname+'/html/index.html', {root:'./public'})
 })
 
 app.post('/', function(req, res){
