@@ -1,21 +1,16 @@
 $(document).ready(function(){
 
-    $('#loginHead').on('click', function (){
-        $('#signupForm').hide();
-        $('#loginForm').show();
-    });
-
-    $('#signUpHead').on('click', function (){
-        $('#loginForm').hide();
-        $('#signupForm').show();
-    });
-
+    //Submit Button Link To Dashboard
     $('#signUp').on('submit', function (event){
         event.preventDefault();
     });
 
-    $('#loginbtn').on('submit', function (event){
+    $('#signupForm').on('submit', function (event){
         event.preventDefault();
+        console.log($(this).serialize());
+        $.post('/userData', $(this).serialize(), function(data){
+            console.log(data);
+        });
     });
 
 });
