@@ -5,6 +5,7 @@
         <title>Sick Fit Health App</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/login.css" type="text/css">
+        <link rel="icon" type="image/png" href="/image/favicon.png" sizes="16x16">
     </head>
     <body class="container">
 
@@ -16,43 +17,33 @@
                     </div>
                     <!-- RIGHT SIDE SIGNUP/LOGIN -->
                     <div class='col-md-6 right-signup'>
-                        <h3 id="signUpHead">Sign-Up</h3><h3>|</h3><h3 id="loginHead">Login</h3>
+                        <h3 id="signUpHead">Enter Your Info!</h3>
                         <form id="signupForm">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="name" class="form-control" placeholder="Name" required>
+                                <label>First Name</label>
+                                <input type="name" name="user_firstname" class="form-control" placeholder="First Name" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" placeholder="E-Mail" required>
+                                <label>Last Name</label>
+                                <input type="name" name="user_lastName" class="form-control" placeholder="Last Name" required>
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Password" required>
+                                <label>Calorie Goal</label>
+                                <input name="user_calorieGoal" class="form-control" placeholder="Calorie Goal" required>
                             </div>
                             <label class="checkbox-inline">
-                                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Male
+                                  <input type="checkbox" name="user_gender" id="inlineCheckbox1" value="Male"> Male
                             </label>
                             <label class="checkbox-inline">
-                                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Female
+                                  <input type="checkbox" name="user_gender" id="inlineCheckbox2" value="Female"> Female
                             </label>
-                            <a href="/dashboard"><h4 type="submit" class="btn btn-default" id="signUp">SIGN UP</h4></a>
-                        </form>
-
-                        <form id="loginForm" hidden>
-                            <div class="form-group">
-                                <label>E-Mail</label>
-                                <input type="email" class="form-control" placeholder="E-Mail" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Password" required>
-                            </div>
-                            <a href="/dashboard"><h4 type="submit" class="btn btn-default" id="loginbtn">LOGIN</h4></a>
+                            <a href="/dashboard"><div class="form-group">
+                                <button type="submit" class="btn btn-default" id="signUp" value="GET STARTED!">GET STARTED!</button>
+                            </div></a>
                         </form>
                     </div>
                 </div><!--row-->
-        </div> <!--main-wrapper-->
+        </div><!--main-wrapper-->
 
 <!-- Script  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
