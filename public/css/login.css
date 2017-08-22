@@ -20,7 +20,7 @@ h3:hover {
 .right-signup {
     margin-left: 80px;
     max-width: 400px;
-    margin-top: 20%;
+    margin-top: 18%;
     color: white;
     font-size: 18px;
 }
@@ -39,8 +39,7 @@ h3:hover {
 
 .btn {
     display: block;
-}
-
-.checkbox {
-
+    color: #1b6394;
+    font-weight: bold;
+    font-size: 18px;
 }
