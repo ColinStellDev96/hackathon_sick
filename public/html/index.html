@@ -40,6 +40,7 @@
         </nav>
         
         <!--form to upload profile picture-->
+<!--
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
@@ -52,6 +53,32 @@
                     </div>
                 </div>
                 <div class="col-md-6">.col-md-6</div>
+            </div>
+        </div>
+-->
+        
+        <div class="modal-body row">
+            <div class="col-md-6">
+                <!-- Your first column here -->
+                <div class="the-form">
+                        <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+                        <img src="/image/placeholder.png"/>
+                        <input id="fileupload" name="myfile" type="file" />
+                        <input type="submit" value="submit" id="submit" />
+                        </form>
+                </div>
+                <!--below this maybe have the total net calories for the day-->
+                <p id='net-cal'></p>
+            </div>
+            <div class="col-md-6">
+                <!-- Your second column here -->
+                <div class='food'>row one for food eaten</div>
+                <!--maybe do this with jquery and append to below #cal-intake 
+                to count how many calories you've had-->
+                <p id='cal-intake'></p>
+                <div class='workout'>row two for workouts done</div>
+                <!--usuing jquery, this would subtract calories from the total-->
+                <p id='cal-workout'></p>
             </div>
         </div>
     

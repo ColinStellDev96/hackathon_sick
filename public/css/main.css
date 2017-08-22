@@ -29,3 +29,11 @@ body {
 .the-form {
     
 }
+
+.food {
+    border: 5px solid black;
+}
+
+.workout {
+    border: 5px solid black;
+}
