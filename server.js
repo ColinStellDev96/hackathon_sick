@@ -21,6 +21,7 @@ app.get('/dashboard', function(req, res){
     res.sendFile('/html/index.html', {root:'./public'});
 });
 
+//File Uploading
 app.use(upload())
 app.get('/',function(req, res){
   res.sendFile(__dirname+'/html/index.html', {root:'./public'})
