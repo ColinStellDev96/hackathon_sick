@@ -1,25 +1,19 @@
 body {
-    position: relative;
     background-color: #1b6394;
-    /* chrome says color is this: #00629B */
-    margin-left: 50px;
-    margin-right: 50px;
 }
 
-#nav-logout {
-    text-align: right;
-}
 
 .navbar-brand {
     height: 150px;
     width: auto;
-    font-size: 30px; 
+    font-size: 30px;
 }
 
 .navbar {
     background-color: #1b6394;
     border: none;
     max-height: 160px;
+    margin-bottom: 0;
 }
 
 #logout {
@@ -33,142 +27,67 @@ body {
     clear: both;
 }
 
+#userInfo h2 {
+    clear: both;
+    display: inline-block;
+    padding-left: 150px;
+    padding-right: 100px;
+    font-size: 60px;
+    color: white;
+}
+
+.the-form {
+    margin: 20px 0 0 50px;
+}
+
 #placeholder {
-    position: absolute;
     top: 10px;
     height: 200px;
     width: auto;
 }
 
 #fileupload {
-    position: absolute;
-    top: 340px;
+    display: inline-block;
 }
 
 #submit {
-    position: absolute;
-    top: 370px;
-}
-
-.the-form {
-    position: absolute;
-    left: 150px;
-}
-
-#fileupload {
-    position: absolute;
-    top: 220px;
-}
-
-#submit {
-    position: absolute;
-    top: 250px;
-    /*top: 215px;*/
-    /*left: 180px;*/
-}
-
-#name {
-    position: absolute;
-    left: 360px;
-    top: 10px;
-    font-size: 18px;
-    color: antiquewhite;
-}
-
-#gender {
-    position: absolute;
-    left: 360px;
-    top: 30px;
-    font-size: 18px;
-    color: antiquewhite;
-}
-
-#cal-goal {
-    position: absolute;
-    left: 360px;
-    top: 50px;
-    font-size: 18px;
-    color: antiquewhite;
+    display: inline-block;
 }
 
 #net-cal-button {
     font-size: 24px;
     color: gray;
-    position: absolute;
-    top: 315px;
-    left: 150px;
     background-color: violet;
+    margin: 20px 0 0 0;
 }
 
+
 #net-cal {
+    display: inline-block;
+    margin-left: 10px;
     font-size: 18px;
     color: palevioletred;
-    position: absolute;
-    top: 323px;
-    left: 400px;
 }
 
 #net-message {
-    position: absolute;
-    top: 370px;
-    left: 150px;
+    font-size: 18px;
     color: ivory;
 }
 
 .food {
+    margin-top: 20px;
     border: 5px solid deepskyblue;
     height: 200px;
-    width: 400px;
+    width: 600px;
     text-align: center;
-    position: absolute;
-    left: 50px;
-    
+    color: white;
 }
 
 .workout {
     border: 5px solid deepskyblue;
     height: 200px;
-    width: 400px;
+    width: 600px;
     text-align: center;
-    position: absolute;
-    left: 50px;
-    top: 300px;
-}
-
-#food-input {
-    position: absolute;
-    left: 65px;
-    top: 50px;
-}
-
-#food-button {
-    position: absolute;
-    left: 250px;
-    top: 45px;
-}
-
-.food-list {
-    position: absolute;
-    left: 50px;
-    top: 100px;
-    text-align: center;
-}
-
-#workout-input {
-    position: absolute;
-    left: 65px;
-    top: 350px;
-}
-
-#workout-button {
-    position: absolute;
-    left: 250px;
-    top: 345px;
-}
-
-.workout-list {
-    position: absolute;
-    left: 50px;
-    top: 400px;
-    text-align: center;
+    margin-top: 20px;
+    color: white;
 }

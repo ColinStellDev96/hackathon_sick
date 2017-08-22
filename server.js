@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
 
+    // SEND FILES FOR MAIN PAGES
     app.get('/login', function(req, res){
         res.sendFile('/html/login.html', {root:'./public'});
     });
@@ -27,24 +28,23 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
         res.sendFile('/html/index.html', {root:'./public'});
     });
 
-    app.use(upload())
+    //CSS SEND FILE
+    app.get('/main.css', function(req, res) {
+      res.sendFile('./main.css', {root: './styles'});
+  });
+
+    app.use(upload());
     app.get('/',function(req, res){
-      res.sendFile(__dirname+'/html/index.html', {root:'./public'})
-    })
+      res.sendFile(__dirname+'/html/index.html', {root:'./public'});
+  });
 
     app.post('/', function(req, res){
       if (req.files){
-        var file = req.files.filename
-        console.log(req.files)
+        var file = req.files.filename;
+        console.log(req.files);
       }
-    })
+  });
 
-    //css
-    app.get('/main.css', function(req, res) {
-      res.sendFile('./main.css', {root: './styles'})
-    })
-
-<<<<<<< HEAD
     //Login Page Data To Database
     // SIGN UP
     app.post('/userData', function (req, res){
@@ -55,13 +55,20 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
             res.send({success: 'success!'});
         });
     });
-=======
+
+    app.get('/userData', function (req, res){
+        db.collection('userData').find({}).toArray(function(err, docs) {
+            console.log('err?', err);
+            res.send(docs);
+        });
+    });
+
 //File Uploading
-app.use(upload())
+app.use(upload());
 app.get('/',function(req, res){
-  res.sendFile(__dirname+'/html/index.html', {root:'./public'})
-})
->>>>>>> 73390fd576ab0efa7ed8f83a8a1752cfed380253
+  res.sendFile(__dirname+'/html/index.html', {root:'./public'});
+});
+// >>>>>>> 73390fd576ab0efa7ed8f83a8a1752cfed380253
 
 
     app.use(function(req, res, next) {

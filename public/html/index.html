@@ -14,75 +14,59 @@
         <link rel="stylesheet" href="/css/main.css" type="text/css">
     </head>
     <body>
-
-        <!-- Bootstrap: Image and text -->
-<!--
-        <nav class="navbar navbar-light bg-faded">
-            <a class="navbar-brand" href="#">
-                <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-                Algo Here
-            </a>
-        </nav>
--->
-        <!--nav bar with logo and logout button-->
-<!--
-        <div class="top-menu"><img class='my-logo' src="pictures/sick_logo.png"/>
-                <a href="html/login.html">Logout</a> &nbsp;
-        </div>
--->
         <!--Bootstrap Navbar-->
-        <nav class="navbar navbar-inverse bg-inverse">
-            <img class="navbar-brand" src="/image/sick_logo.png" width="100" height="100"/>
-            <a class="navbar-brand" id="logout" href="html/login.html">Logout</a>
-        </nav>
+        <header>
+            <nav class="navbar navbar-inverse bg-inverse">
+                <img class="navbar-brand" src="/image/sick_logo.png" width="100" height="100"/>
+                <a class="navbar-brand" id="logout" href="html/login.html">Start Over!</a>
+            </nav>
+        </header>
 
-        <div class="modal-body row">
-            <div class="col-md-6">
-                <!-- FIRST COLUMN -->
-                <!--form to upload profile picture-->  
-                <!--placeholder picture should be replaced with user pro pic-->
-                <div class="the-form">
-                        <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-                        <img id="placeholder" src="/image/placeholder.png"/>
-                        <input id="fileupload" name="myfile" type="file" />
-                        <input type="submit" value="submit" id="submit" />
-                        </form>
-                </div>
-                <div>
-                    <!--print user info: name, calorie goal-->
-                    <p id="name">Name: </p>
-                    <p id="gender">Gender: </p>
-                    <p id="cal-goal">Calorie Goal: </p>
-                    <!--jquery here, alerts that say if you've hit your daily calorie limit or not-->
-                    <button id='net-cal-button'>Count my Calories!</button>
-                    <p id='net-cal'><!--NUMBER HERE-->Sup</p>
-                    <p id="net-message"><!--alert stuff-->Hiya</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <!-- SECOND COLUMN -->
-                <div class='food'>FOODS EATEN TODAY</div>
-                <!--input for user to enter food, with add button-->
-                <input id='food-input' name='myfood' type='text'>
-                <button type="button" class="btn btn-success" id="food-button">Add food!</button>
-                <!--make list, use jquery to add food + calories in it to list-->
-                <ul class='food-list'>
-                    <li id='food-and-cals'></li>
-                </ul>
-                <!--#cal-foods is the sum of the stuff in the table-->
-                <p id='cal-foods'></p>
-                <div class='workout'>WORKOUTS DONE TODAY</div>
-                <!--input for user to enter food, with add button-->
-                <input id='workout-input' name='myworkout' type='text'>
-                <button type="button" class="btn btn-success" id="workout-button">Add workout!</button>
-                <!--make list, use jquery to add workout done + calories for it to list-->
-                <ul class='workout-list'>
-                    <li id='workout-and-cals'></li>
-                </ul>
-                <!--#cal-workouts is the sum of the stuff in the table-->
-                <p id='cal-workouts'></p>
-            </div>
-        </div>
+    <div class="container-fluid">
+                <span id="userInfo" class="text-center"><h2 id="name"></h2><h2 id="gender"></h2><h2 id="cal-goal"></h2></span>
+
+                <div class="row">
+                  <div class="col-md-6">
+                      <div class="the-form">
+                              <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+                                  <img id="placeholder" src="/image/placeholder.png"/><br>
+                                  <input id="fileupload" name="myfile" type="file" />
+                                  <input type="submit" value="submit" id="submit" />
+                              </form>
+                              <button id='net-cal-button'>Count my Calories!</button>
+                              <p id='net-cal'><!--NUMBER HERE-->Sup</p>
+                              <p id="net-message"><!--alert stuff-->Hiya</p>
+                      </div>
+                  </div>
+              <div class="col-md-6">
+                  <section class='food'>
+                          <h3>FOODS EATEN TODAY</h3>
+                      <!--input for user to enter food, with add button-->
+                          <input id='food-input' name='myfood' type='text'>
+                      <button type="button" class="btn btn-success" id="food-button">Add food!</button>
+                      <!--make list, use jquery to add food + calories in it to list-->
+                      <ul class='food-list'>
+                          <li id='food-and-cals'></li>
+                      </ul>
+                      <!--#cal-foods is the sum of the stuff in the table-->
+                      <p id='cal-foods'></p>
+                  </section>
+                  <section class='workout'>
+                      <h3>WORKOUTS DONE TODAY</h3>
+                      <!--input for user to enter food, with add button-->
+                      <input id='workout-input' name='myworkout' type='text'>
+                      <button type="button" class="btn btn-success" id="workout-button">Add workout!</button>
+                      <!--make list, use jquery to add workout done + calories for it to list-->
+                      <ul class='workout-list'>
+                          <li id='workout-and-cals'></li>
+                      </ul>
+                      <!--#cal-workouts is the sum of the stuff in the table-->
+                      <p id='cal-workouts'></p>
+                  </section>
+              </div>
+          </div>
+    </div>
+
 
 
 
