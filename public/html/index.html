@@ -23,15 +23,25 @@
         </header>
 
     <div class="container-fluid">
-                <span id="userInfo" class="text-center"><h2 id="name"></h2><h2 id="gender"></h2><h2 id="cal-goal"></h2></span>
+        <div class="row" id="headline">
+                  <div class="col-xs-6 col-md-4"><h2 class="text-center">NAME</h2></div>
+                  <div class="col-xs-6 col-md-4"><h2 class="text-center">GENDER</h2></div>
+                  <div class="col-xs-6 col-md-4"><h2 class="text-center">CALORIE GOAL</h2></div>
+        </div>
+        <div class="row" id="userInfo">
+                  <div class="col-xs-6 col-md-4"><h2 id="name" class="text-center"></h2></div>
+                  <div class="col-xs-6 col-md-4"><h2 id="gender" class="text-center"></h2></div>
+                  <div class="col-xs-6 col-md-4"><h2 id="cal-goal" class="text-center"></h2></div>
+        </div>
+        <hr>
 
                 <div class="row">
                   <div class="col-md-6">
                       <div class="the-form">
                               <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-                                  <img id="placeholder" src="/image/placeholder.png"/><br>
-                                  <input id="fileupload" name="myfile" type="file" />
-                                  <input type="submit" value="submit" id="submit" />
+                                  <img id="placeholder" class="center-block" src="/image/placeholder.png"/><br>
+                                  <input id="fileupload" class='center-block' name="myfile" type="file" />
+                                  <input type="submit" class='center-block' value="Submit" id="submit" />
                               </form>
                               <button id='net-cal-button'>Count my Calories!</button>
                               <p id='net-cal'><!--NUMBER HERE-->Sup</p>

@@ -16,9 +16,6 @@ $(document).ready(function(){
         });
     });
 
-
-
-
     $.get('/userData', function (data){
         console.log(data);
         var appendData = data;
