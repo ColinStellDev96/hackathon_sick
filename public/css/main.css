@@ -36,6 +36,8 @@ body {
 #placeholder {
     position: absolute;
     top: 10px;
+    height: 200px;
+    width: auto;
 }
 
 #fileupload {
@@ -53,27 +55,64 @@ body {
     left: 150px;
 }
 
+#fileupload {
+    position: absolute;
+    top: 220px;
+}
+
+#submit {
+    position: absolute;
+    top: 250px;
+    /*top: 215px;*/
+    /*left: 180px;*/
+}
+
+#name {
+    position: absolute;
+    left: 360px;
+    top: 10px;
+    font-size: 18px;
+    color: antiquewhite;
+}
+
+#gender {
+    position: absolute;
+    left: 360px;
+    top: 30px;
+    font-size: 18px;
+    color: antiquewhite;
+}
+
+#cal-goal {
+    position: absolute;
+    left: 360px;
+    top: 50px;
+    font-size: 18px;
+    color: antiquewhite;
+}
+
 #net-cal-button {
     font-size: 24px;
     color: gray;
     position: absolute;
-    top: 415px;
+    top: 315px;
     left: 150px;
     background-color: violet;
 }
 
 #net-cal {
     font-size: 18px;
-    color: dimgray;
+    color: palevioletred;
     position: absolute;
-    top: 423px;
+    top: 323px;
     left: 400px;
 }
 
 #net-message {
     position: absolute;
-    top: 470px;
+    top: 370px;
     left: 150px;
+    color: ivory;
 }
 
 .food {
