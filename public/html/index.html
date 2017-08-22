@@ -36,50 +36,49 @@
             <a class="navbar-brand" id="logout" href="html/login.html">Logout</a>
         </nav>
 
-        <!--form to upload profile picture-->
-<!--
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="the-form">
-                        <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-                        <img src="/image/placeholder.png"/>
-                        <input id="fileupload" name="myfile" type="file" />
-                        <input type="submit" value="submit" id="submit" />
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">.col-md-6</div>
-            </div>
-        </div>
-
--->
-        
         <div class="modal-body row">
             <div class="col-md-6">
-                <!-- Your first column here -->
+                <!-- FIRST COLUMN -->
+                <!--form to upload profile picture-->  
+                <!--placeholder picture should be replaced with user pro pic-->
                 <div class="the-form">
                         <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-                        <img src="/image/placeholder.png"/>
+                        <img id="placeholder" src="/image/placeholder.png"/>
                         <input id="fileupload" name="myfile" type="file" />
                         <input type="submit" value="submit" id="submit" />
                         </form>
                 </div>
-                <!--below this maybe have the total net calories for the day-->
-                <p id='net-cal'></p>
+                <div>
+                    <!--jquery here, alerts that say if you've hit your daily calorie limit or not-->
+                    <button id='net-cal-button'>Count my Calories!</button>
+                    <p id='net-cal'><!--NUMBER HERE--></p>
+                    <p id="net-message"><!--alert stuff-->Stuff</p>
+                </div>
             </div>
             <div class="col-md-6">
-                <!-- Your second column here -->
-                <div class='food'>row one for food eaten</div>
-                <!--maybe do this with jquery and append to below #cal-intake 
-                to count how many calories you've had-->
-                <p id='cal-intake'></p>
-                <div class='workout'>row two for workouts done</div>
-                <!--usuing jquery, this would subtract calories from the total-->
-                <p id='cal-workout'></p>
+                <!-- SECOND COLUMN -->
+                <div class='food'>FOODS EATEN TODAY</div>
+                <!--input for user to enter food, with add button-->
+                <input id='food-input' name='myfood' type='text'>
+                <button type="button" class="btn btn-success" id="food-button">Add food!</button>
+                <!--make list, use jquery to add food + calories in it to list-->
+                <ul class='food-list'>
+                    <li id='food-and-cals'></li>
+                </ul>
+                <!--#cal-foods is the sum of the stuff in the table-->
+                <p id='cal-foods'></p>
+                <div class='workout'>WORKOUTS DONE TODAY</div>
+                <!--input for user to enter food, with add button-->
+                <input id='workout-input' name='myworkout' type='text'>
+                <button type="button" class="btn btn-success" id="workout-button">Add workout!</button>
+                <!--make list, use jquery to add workout done + calories for it to list-->
+                <ul class='workout-list'>
+                    <li id='workout-and-cals'></li>
+                </ul>
+                <!--#cal-workouts is the sum of the stuff in the table-->
+                <p id='cal-workouts'></p>
             </div>
         </div>
-    
 
 
 

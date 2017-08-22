@@ -44,6 +44,7 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
       res.sendFile('./main.css', {root: './styles'})
     })
 
+<<<<<<< HEAD
     //Login Page Data To Database
     // SIGN UP
     app.post('/userData', function (req, res){
@@ -54,6 +55,13 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
             res.send({success: 'success!'});
         });
     });
+=======
+//File Uploading
+app.use(upload())
+app.get('/',function(req, res){
+  res.sendFile(__dirname+'/html/index.html', {root:'./public'})
+})
+>>>>>>> 73390fd576ab0efa7ed8f83a8a1752cfed380253
 
 
     app.use(function(req, res, next) {
