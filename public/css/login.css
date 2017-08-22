@@ -1,5 +1,5 @@
 body {
-    
+
     background-color: #1b6394;
 }
 
@@ -8,11 +8,13 @@ h3 {
     text-transform: uppercase;
     color: white;
     padding-right: 20px;
+    font-size: 28px;
 }
 
 h3:hover {
     color: #9bceef;
     cursor: pointer;
+    font-size: 28px;
 }
 
 .right-signup {
@@ -20,9 +22,14 @@ h3:hover {
     max-width: 400px;
     margin-top: 20%;
     color: white;
+    font-size: 18px;
 }
 
 #signUp {
+    margin-top: 15px;
+}
+
+#loginbtn {
     margin-top: 20px;
 }
 
@@ -32,4 +39,8 @@ h3:hover {
 
 .btn {
     display: block;
+}
+
+.checkbox {
+
 }

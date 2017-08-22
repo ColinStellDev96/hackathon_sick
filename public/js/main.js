@@ -10,5 +10,13 @@ $(document).ready(function(){
         $('#signupForm').show();
     });
 
+    $('#signUp').on('submit', function (event){
+        event.preventDefault();
+    });
+
+    $('#loginbtn').on('submit', function (event){
+        event.preventDefault();
+    });
+
 });
 //End of doc
