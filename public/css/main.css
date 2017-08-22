@@ -1,7 +1,27 @@
 body {
     background-color: #1b6394;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 
+#wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/image/workoutback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .2;
+    z-index: 0;
+    position: absolute;
+}
+
+#transparent {
+    height: 200vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
+}
 
 .navbar-brand {
     height: 150px;
