@@ -33,18 +33,6 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
       res.sendFile('./main.css', {root: './styles'});
   });
 
-    app.use(upload());
-    app.get('/',function(req, res){
-      res.sendFile(__dirname+'/html/index.html', {root:'./public'});
-  });
-
-    app.post('/', function(req, res){
-      if (req.files){
-        var file = req.files.filename;
-        console.log(req.files);
-      }
-  });
-
     //Login Page Data To Database
     // SIGN UP
     app.post('/userData', function (req, res){
@@ -56,6 +44,7 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
         });
     });
 
+    // Grabbing User Data From Database and Sending to Front-End
     app.get('/userData', function (req, res){
         db.collection('userData').find({}).toArray(function(err, docs) {
             console.log('err?', err);
@@ -63,20 +52,54 @@ MongoClient.connect('mongodb://localhost:27017/sick_fit', function(err, db) {
         });
     });
 
+    // Grabbing Food Data From Database and Sending to Front-End
+    app.get('/foodItems', function (req, res){
+        db.collection('foodItems').find({}).sort({'foodName': 1}).toArray(function(err, docs){
+            console.log('err?', err);
+            res.send(docs);
+        });
+    });
+
+    // Grabbing Workout Data From Database and Sending to Front-End
+    app.get('/calories', function (req, res){
+        db.collection('exercise').find({}).sort({'excerciseName': 1}).toArray(function(err, docs){
+            console.log('err?', err);
+            res.send(docs);
+        });
+    });
+
+
+
+
+
+
+
+    // app.get('/api_data', function (req, res) {
+    //     console.log('working');
+    //     request('https://trackapi.nutritionix.com/v2/search/instant&appId=72192468&appKey=46bc41cc62b1c33c0c1adeb162e3a8bc', function (error, response, body){
+    //         console.log(body);
+    //         console.log('error?', error);
+    //         var apiData = JSON.parse(body);
+    //         res.send(apiData);
+    //     });
+    // });
+
+
+
 //File Uploading
 app.use(upload());
 app.get('/',function(req, res){
   res.sendFile(__dirname+'/html/index.html', {root:'./public'});
 });
-// >>>>>>> 73390fd576ab0efa7ed8f83a8a1752cfed380253
 
-
+// END OF APP Error Messages
     app.use(function(req, res, next) {
         res.status(404).send('not found');
     });
     app.use(function(req, res, next) {
         res.status(500).send('oops');
     });
+// APP LISTEN
     app.listen(8080);
 
 }); // END OF DATABASE CONNECT

@@ -37,45 +37,35 @@
                   <div class="col-xs-6 col-md-4"><h2 id="gender" class="text-center"></h2></div>
                   <div class="col-xs-6 col-md-4"><h2 id="cal-goal" class="text-center"></h2></div>
         </div>
-        <hr>
+
+        <section class="container text-center" id="display">
+            <h1>Calorie Count:<span id="totalCount"></span> </h1>
+        </section>
+
 
                 <div class="row">
                   <div class="col-md-6">
-                      <div class="the-form">
-                              <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-                                  <img id="placeholder" class="center-block" src="/image/placeholder.png"/><br>
-                                  <input id="fileupload" class='center-block' name="myfile" type="file" />
-                                  <input type="submit" class='center-block' value="Submit" id="submit" />
-                              </form>
-                              <button id='net-cal-button'>Count my Calories!</button>
-                              <p id='net-cal'><!--NUMBER HERE-->Sup</p>
-                              <p id="net-message"><!--alert stuff-->Hiya</p>
+                      <section class='food'>
+                              <h3>FOODS EATEN TODAY</h3>
+                                  <table class="table" id="foodData">
+                                      <tr>
+                                          <th class="text-center">Food Name</th>
+                                          <th class="text-center">Calories</th>
+                                          <th class="text-center">Eaten?</th>
+                                      </tr>
+                                  </table>
+                        </section>
                       </div>
-                  </div>
               <div class="col-md-6">
-                  <section class='food'>
-                          <h3>FOODS EATEN TODAY</h3>
-                      <!--input for user to enter food, with add button-->
-                          <input id='food-input' name='myfood' type='text'>
-                      <button type="button" class="btn btn-success" id="food-button">Add food!</button>
-                      <!--make list, use jquery to add food + calories in it to list-->
-                      <ul class='food-list'>
-                          <li id='food-and-cals'></li>
-                      </ul>
-                      <!--#cal-foods is the sum of the stuff in the table-->
-                      <p id='cal-foods'></p>
-                  </section>
                   <section class='workout'>
                       <h3>WORKOUTS DONE TODAY</h3>
-                      <!--input for user to enter food, with add button-->
-                      <input id='workout-input' name='myworkout' type='text'>
-                      <button type="button" class="btn btn-success" id="workout-button">Add workout!</button>
-                      <!--make list, use jquery to add workout done + calories for it to list-->
-                      <ul class='workout-list'>
-                          <li id='workout-and-cals'></li>
-                      </ul>
-                      <!--#cal-workouts is the sum of the stuff in the table-->
-                      <p id='cal-workouts'></p>
+                      <table class="table" id="workoutData">
+                          <tr>
+                              <th class="text-center">Exercise</th>
+                              <th class="text-center">Calories Burned(hr)</th>
+                              <th class="text-center">Complete?</th>
+                          </tr>
+                      </table>
                   </section>
               </div>
           </div>

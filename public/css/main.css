@@ -1,12 +1,12 @@
 body {
     background-color: #1b6394;
     position: relative;
-    height: 100vh;
+    height: 120vh;
     width: 100vw;
 }
 
 #wrapper {
-    height: 100vh;
+    height: 120vh;
     width: 100vw;
     background-image: url(/image/workoutback.jpg);
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
 }
 
 #transparent {
-    height: 200vh;
+    height: 120vh;
     width: 100vw;
     position: absolute;
     z-index: 1;
@@ -42,7 +42,7 @@ body {
     margin-top: 50px;
     text-transform: uppercase;
     font-weight: bold;
-    color: lightgray;
+    color: #09fc05;
 }
 
 .row {
@@ -59,7 +59,13 @@ body {
     clear: both;
     font-size: 40px;
     color: violet;
-    border: 2px solid white;
+    border: 2px solid deepskyblue;
+    padding: 5px 0;
+}
+
+#display h1 {
+    text-transform: uppercase;
+    color: #09fc05;
 }
 
 .the-form {
@@ -110,17 +116,43 @@ body {
 .food {
     margin-top: 20px;
     border: 5px solid deepskyblue;
-    height: 200px;
-    width: 600px;
+    height: 400px;
+    width: 100%;
     text-align: center;
     color: white;
+    overflow: scroll;
+}
+
+.food h3 {
+    font-size: 30px;
+    color: #09fc05;
 }
 
 .workout {
     border: 5px solid deepskyblue;
-    height: 200px;
-    width: 600px;
+    height: 400px;
+    width: 100%;
     text-align: center;
     margin-top: 20px;
     color: white;
+    overflow: scroll;
+}
+
+.workout h3 {
+    font-size: 30px;
+    color: #09fc05;
+}
+
+.table th{
+    text-transform: uppercase;
+    font-size: 24px;
+    color: violet;
+    width: 310px;
+}
+
+.table tr {
+    font-size: 20px;
+    color: white;
+    padding: 15px 0;
+    border-bottom: 1px solid white;
 }
