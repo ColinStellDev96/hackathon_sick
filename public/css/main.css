@@ -2,12 +2,12 @@ body {
     background-color: #1b6394;
     font-family: 'Droid Sans', sans-serif;
     position: relative;
-    height: 120vh;
+    height: 110vh;
     width: 100vw;
 }
 
 #wrapper {
-    height: 120vh;
+    height: 110vh;
     width: 100vw;
     background-image: url(/image/workoutback.jpg);
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ body {
 }
 
 #transparent {
-    height: 120vh;
+    height: 110vh;
     width: 100vw;
     position: absolute;
     z-index: 1;
@@ -162,4 +162,13 @@ body {
     color: white;
     padding: 15px 0;
     border-bottom: 1px solid white;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 18px;
+    color: #09fc05;
 }
