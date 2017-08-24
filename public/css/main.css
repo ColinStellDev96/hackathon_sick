@@ -2,12 +2,12 @@ body {
     background-color: #1b6394;
     font-family: 'Droid Sans', sans-serif;
     position: relative;
-    height: 110vh;
+    height: 130vh;
     width: 100vw;
 }
 
 #wrapper {
-    height: 110vh;
+    height: 130vh;
     width: 100vw;
     background-image: url(/image/workoutback.jpg);
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ body {
 }
 
 #transparent {
-    height: 110vh;
+    height: 130vh;
     width: 100vw;
     position: absolute;
     z-index: 1;
@@ -69,6 +69,27 @@ body {
 #display h1 {
     text-transform: uppercase;
     color: #09fc05;
+}
+
+.progress {
+    height: 40px;
+}
+
+.progress-bar {
+    background-image: linear-gradient(to right, violet, deepskyblue, #09fc05);
+    border-image-slice: 1;
+}
+
+.alert-success {
+    color: white;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, deepskyblue, #09fc05);
+    border-image-slice: 1;
+    border-color: white;
+}
+
+.alert p {
+    font-size: 24px;
 }
 
 .the-form {

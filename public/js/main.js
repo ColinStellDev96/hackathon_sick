@@ -1,39 +1,49 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
     //Submit Button Link To Dashboard
-    $('#signUp').on('submit', function (event){
+    $('#signUp').on('submit', function(event) {
         event.preventDefault();
         console.log('sign up button clicked');
         window.location = '/dashboard';
     });
 
     // Submit User Data To Server & Database
-    $('#signupForm').on('submit', function (event){
+    $('#signupForm').on('submit', function(event) {
         event.preventDefault();
         console.log($(this).serialize());
-        $.post('/userData', $(this).serialize(), function(data){
+        $.post('/userData', $(this).serialize(), function(data) {
             console.log(data);
             window.location = '/dashboard';
         });
     });
 
     //Appending User Data to Dashboard
-    $.get('/userData', function (data){
+    var valueMax = $('#progress').attr('aria-valuemax');
+    // console.log(valueMax);
+    //Calorie Counter Variable
+    var calorieCount = 0;
+    var progress = $('#progress');
+    var ariaNow = progress.attr('aria-valuenow');
+    // console.log(ariaNow);
+    var style = progress.attr("style");
+    console.log(style);
+    var equation = ((ariaNow / valueMax) * 100);
+    // console.log(equation);
+
+    $.get('/userData', function(data) {
         console.log(data);
         var appendData = data;
         $('#name').empty();
         $('#gender').empty();
         $('#cal-goal').empty();
-            $('#name').append(`${appendData[appendData.length - 1]['user_firstname']} ${appendData[appendData.length - 1]['lastName']}`);
-            $('#gender').append(`${appendData[appendData.length - 1]['user_gender']}`);
-            $('#cal-goal').append(`${appendData[appendData.length - 1]['user_calorieGoal']}`);
+        $('#name').append(`${appendData[appendData.length - 1]['user_firstname']} ${appendData[appendData.length - 1]['lastName']}`);
+        $('#gender').append(`${appendData[appendData.length - 1]['user_gender']}`);
+        $('#cal-goal').append(`${appendData[appendData.length - 1]['user_calorieGoal']}`);
+        valueMax = appendData[appendData.length - 1]['user_calorieGoal'];
     });
 
-    //Calorie Counter Variable
-    var calorieCount = 0;
-
     // Displaying All Food Items in Table Data Form
-    $.get('/foodItems', function (data) {
+    $.get('/foodItems', function(data) {
         console.log(data);
         var foodAppend = data;
         for (var i = 0; i < foodAppend.length; i++) {
@@ -42,30 +52,53 @@ $(document).ready(function(){
                     <td>${foodAppend[i]['foodName']}</td>
                     <td>${foodAppend[i]['calories']}</td>
                     <td><input type="checkbox" class="foodCheck"></td>
-                </tr>`
-            );
+                </tr>`);
         }
-        // for (key in foodAppend) {
-        //     if (key === '_id') {
-        //         console.log(_id);
-        //     }
-        // } //end of for in loop
-        $('.foodCheck').click(function (){
+        $('.foodCheck').click(function() {
             // console.log($(this.checked))
             $('#totalCount').empty()
             var thisCals = $($(this).parent().parent()).children()[1].innerText;
             if (this.checked == true) {
                 calorieCount += parseInt(thisCals);
                 $('#totalCount').text(calorieCount);
+                ariaNow = calorieCount;
+                bar = (ariaNow / valueMax) * 100;
+                // console.log(bar);
+                // console.log(ariaNow);
+                progress.css("width", bar + '%');
+                if (calorieCount >= valueMax) {
+                    // console.log(valueMax);
+                    // console.log(calorieCount);
+                    $('.alert').removeAttr('style');
+                } else {
+                    $('.alert').attr('style', "display: none");
+                }
             } else if (this.checked == false) {
                 calorieCount -= parseInt(thisCals);
                 $('#totalCount').text(calorieCount);
+                ariaNow = calorieCount;
+                bar = (ariaNow / valueMax) * 100;
+                // console.log(ariaNow);
+                progress.css("width", ariaNow);
+                progress.css("width", bar + '%');
+                if (calorieCount >= valueMax) {
+                    // console.log(valueMax);
+                    // console.log(calorieCount);
+                    $('.alert').attr('style', "display: flex");
+                } else {
+                    $('.alert').attr('style', "display: none");
+                }
             }
+            // console.log($('#progress').attr('aria-valuemin'));
+            // console.log($('#progress').attr('style'));
+            // console.log($('#progress').attr('aria-valuenow'));
+            // console.log($('#progress').attr('aria-valuemax'));
+
         });
     });
 
     //Displaying All Workout Items in Table Data Form
-    $.get('/calories', function (data) {
+    $.get('/calories', function(data) {
         console.log(data);
         var exerciseAppend = data;
         for (var i = 0; i < exerciseAppend.length; i++) {
@@ -74,51 +107,48 @@ $(document).ready(function(){
                     <td>${exerciseAppend[i]['excerciseName']}</td>
                     <td>${exerciseAppend[i]['calories']}</td>
                     <td><input type="checkbox" class="workCheck"></td>
-                </tr>`
-            );
+                </tr>`);
         }
-
-        $('.workCheck').click(function (){
+        $('.workCheck').click(function() {
             // console.log($(this.checked))
             $('#totalCount').empty()
             var thisCals = $($(this).parent().parent()).children()[1].innerText;
             if (this.checked == true) {
                 calorieCount -= parseInt(thisCals);
                 $('#totalCount').text(calorieCount);
+                ariaNow = calorieCount;
+                bar = (ariaNow / valueMax) * 100;
+                // console.log(bar);
+                // console.log(ariaNow);
+                progress.css("width", bar + '%');
+                // console.log(ariaNow);
+                if (calorieCount >= valueMax) {
+                    // console.log(valueMax);
+                    // console.log(calorieCount);
+                    $('.alert').removeAttr('style');
+                } else {
+                    $('.alert').attr('style', "display: none");
+                }
             } else if (this.checked == false) {
                 calorieCount += parseInt(thisCals);
                 $('#totalCount').text(calorieCount);
+                ariaNow = calorieCount;
+                // console.log(ariaNow);
+                bar = (ariaNow / valueMax) * 100;
+                // console.log(bar);
+                // console.log(ariaNow);
+                progress.css("width", bar + '%');
+                if (calorieCount >= valueMax) {
+                    // console.log(valueMax);
+                    // console.log(calorieCount);
+                    $('.alert').removeAttr('style');
+                } else {
+                    $('.alert').attr('style', "display: none");
+                }
             }
         });
 
     });
-
-    //Adding Calories to Calorie Count
-    // $('#foodCheck').click(function (){
-    //     for (var key in foodAppend) {
-    //         if (key === _id) {
-    //             console.log(_id);
-    //         }
-    //     }
-    // });
-
-
-    //Removing Calories From Calorie Count
-
-
-
-
-
-
-
-
-
-        // $.get('/api_data', function (data){
-        //     console.log(data);
-        // });
-
-
-
 
 });
 //End of doc

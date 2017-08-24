@@ -41,7 +41,16 @@
 
         <section class="container text-center" id="display">
             <h1>Calorie Count: <span id="totalCount"></span> </h1>
+            <div class="progress">
+                  <div class="progress-bar" id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0%;">
+                  </div>
+            </div>
         </section>
+
+        <div class="alert alert-success alert-dismissible" role="alert" style="display: none">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <p class="text-center"><strong>Congrats!</strong> You have met your calorie goal!</p>
+        </div>
 
 
                 <div class="row">
@@ -71,7 +80,7 @@
               </div>
           </div>
           <footer>
-              <p class='text-center'>&copy; 2017 Sick Fit // Stephanie, Kyle and Colin</p>
+              <p class='text-center'>&copy; 2017 Sick Fit // Stephany, Kyle and Colin</p>
           </footer>
     </div>
      </div>
